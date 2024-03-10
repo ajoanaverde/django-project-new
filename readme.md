@@ -11,7 +11,7 @@ $ python3 -m venv nameofthevirtualenvironment
 activate the virtual environment
 
 ```
-$ source virt/Scripts/activate
+$ source nameofthevirtualenvironment/Scripts/activate
 
 ```
 install django
@@ -34,6 +34,8 @@ or
 $ pip3 install mysql-connector
 
 ```
+
+add database connection information to the mydb.py
 
 run mydb.py file to create the database
 
