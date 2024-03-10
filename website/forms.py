@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
+from .models import Record
 
 
 class SignUpForm(UserCreationForm):
@@ -32,3 +33,15 @@ def __init__(self, *args, **kwargs):
     self.fields['password2'].label = ''
     self.fields['password2'].help_text = '<span class="form-text text-muted"><small>Entrez la meme password, pour verification.</small></span>'	
 
+
+# Formulaire pour creer un registre
+    
+class AddRecordForm(forms.ModelForm):
+    first_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "First Name", "class":"form-control"}), label="")
+    last_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Last Name", "class":"form-control"}), label="")
+    email = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Email", "class":"form-control"}), label="")
+    adress = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Adress", "class":"form-control"}), label="")
+
+
+class Meta:
+    model = Recordexclude = ("user",)

@@ -11,7 +11,7 @@ $ python3 -m venv nameofthevirtualenvironment
 activate the virtual environment
 
 ```
-$ source virt/Script/activate
+$ source virt/Scripts/activate
 
 ```
 install django
