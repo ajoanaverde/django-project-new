@@ -43,27 +43,27 @@ class AddRecordForm(forms.ModelForm):
     adress = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Adress", "class":"form-control"}), label="")
 
 
-class Meta:
-    model = Record
-    fields = ('first_name', 'last_name', 'email', 'adress')
+    class Meta:
+        model = Record
+        fields = ('first_name', 'last_name', 'email', 'adress')
 
-def __init__(self, *args, **kwargs):
-    super(AddRecordForm, self).__init__(*args, **kwargs)
-
-
-    self.fields['first_name'].widget.attrs['class'] = 'form-control'
-    self.fields['first_name'].widget.attrs['placeholder'] = 'First Name'
-    self.fields['first_name'].label = ''
+    def __init__(self, *args, **kwargs):
+        super(AddRecordForm, self).__init__(*args, **kwargs)
 
 
-    self.fields['last_name'].widget.attrs['class'] = 'form-control'
-    self.fields['last_name'].widget.attrs['placeholder'] = 'Last Name'
-    self.fields['last_name'].label = ''
+        self.fields['first_name'].widget.attrs['class'] = 'form-control'
+        self.fields['first_name'].widget.attrs['placeholder'] = 'First Name'
+        self.fields['first_name'].label = ''
 
-    self.fields['email'].widget.attrs['class'] = 'form-control'
-    self.fields['email'].widget.attrs['placeholder'] = 'Email'
-    self.fields['email'].label = ''
 
-    self.fields['adress'].widget.attrs['class'] = 'form-control'
-    self.fields['adress'].widget.attrs['placeholder'] = 'Adress'
-    self.fields['adress'].label = ''
+        self.fields['last_name'].widget.attrs['class'] = 'form-control'
+        self.fields['last_name'].widget.attrs['placeholder'] = 'Last Name'
+        self.fields['last_name'].label = ''
+
+        self.fields['email'].widget.attrs['class'] = 'form-control'
+        self.fields['email'].widget.attrs['placeholder'] = 'Email'
+        self.fields['email'].label = ''
+
+        self.fields['adress'].widget.attrs['class'] = 'form-control'
+        self.fields['adress'].widget.attrs['placeholder'] = 'Adress'
+        self.fields['adress'].label = ''
